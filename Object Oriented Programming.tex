@@ -1,0 +1,172 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\usepackage{graphicx}
+\setlength{\parindent}{0pt}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+
+
+\begin{document}
+\title{Object Oriented Programing with Python}
+\date{05/03/2024}
+\maketitle
+
+\textbf{Tutorial URL}:
+\url{https://www.youtube.com/watch?v=Ej_02ICOIgs&t=107s}
+
+\textbf{Creating an object with a class (basic):}
+\begin{lstlisting}
+class Item:
+	pass
+
+item1 = 'Phone'
+item1_price = 100
+item1_quantity = 5
+item1_price_total = item1_price * item1_quantity
+\end{lstlisting}
+
+\textbf{Creating the first method}\\
+Methods are functions inside classes.
+
+How we can go ahead and design some methods, which are going to be allowed to be executed on our instances?
+
+The answer is, the methods should be created inside our class.
+
+\begin{lstlisting}
+	class Item:
+		def calculate_total_price(self):
+		pass
+	
+	
+	item1 = Item()
+	item1_price = 100
+	item1_quantity = 5
+	item1_price_total = item1_price * item1_quantity
+\end{lstlisting}
+
+\textbf{Self}: Python passes the object itself as the first argument everytime. So we are not allowed to create methods without the self. 
+
+\begin{lstlisting}
+class Item:
+def calculate_total_price(self, x, y):  # x, and y are parameters
+return x * y
+
+
+item1 = Item()
+item1.name = "Phone"
+item1.price = 100
+item1.quantity = 5
+print(item1.calculate_total_price(item1.price, item1.quantity))  # When I call the method calculate_total_price, Python passes the variables as mehtods.
+\end{lstlisting}
+
+\textbf{Magic Methods}
+
+\_\_init\_\_
+
+\begin{lstlisting}
+	class Item:
+	def __init__(self):  # Python executes the init function automatically.
+	
+	print("I AM CREATED")
+	
+	
+	item1 = Item()
+	item1_name = "Phone"
+	item1.price = 100
+	item1_quantity = 5
+	
+	
+	item1 = Item()
+	item_name = "Laptop"
+	item1_price = 1000
+	item1_quantity = 3
+
+
+Output:
+	I AM CREATED
+	I AM CREATED
+	
+\end{lstlisting}
+How to avoid creating the whole attribute, adding more parameters into the class:Assign the attributes dinamicaly. 
+\begin{lstlisting}
+	class Item:
+	def __init__(self, name):
+	self.name = name
+	print(f"An instance created from instance: {name}")
+	
+	
+	item1 = Item("Phone")
+	#item1.name = "Phone"
+	item1.price = 100
+	item1_quantity = 5
+	
+	item2 = Item("Laptop")
+	#item2.name = "Laptop("
+	item2_price = 1000
+	item2.quantity = 3
+	
+	An instance created from instance: Phone
+	An instance created from instance: Laptop
+	
+\end{lstlisting}
+
+
+\begin{lstlisting}
+	class Item:
+	def __init__(self, name):
+	self.name = name
+	print(f"An instance created from instance: {name}")
+	
+	
+	item1 = Item("Phone")
+	#item1.name = "Phone"
+	item1.price = 100
+	item1_quantity = 5
+	
+	item2 = Item("Laptop")
+	#item2.name = "Laptop("
+	item2_price = 1000
+	item2.quantity = 3
+	
+	An instance created from instance: Phone
+	An instance created from instance: Laptop
+	
+\end{lstlisting}
+
+	
+\end{document}
