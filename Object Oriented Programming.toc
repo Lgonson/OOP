@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Creating an object with a class (basic):}{2}{section.1}%
+\contentsline {section}{\numberline {2}Creating the first method}{2}{section.2}%
+\contentsline {section}{\numberline {3}Self}{2}{section.3}%
+\contentsline {section}{\numberline {4}Magic Methods:}{3}{section.4}%
+\contentsline {section}{\numberline {5}Simplification / Improvement of objects:}{4}{section.5}%
+\contentsline {section}{\numberline {6}Delimiting data types in the class attributes.}{5}{section.6}%
+\contentsline {section}{\numberline {7}Assertion Error: Technick to find quicklier the errors in the objects input}{6}{section.7}%
+\contentsline {section}{\numberline {8}Class Attributes}{6}{section.8}%
+\contentsline {section}{\numberline {9}Magic Attriute:}{7}{section.9}%
+\contentsline {section}{\numberline {10}Accessing a class attribute from a method}{8}{section.10}%
+\contentsline {section}{\numberline {11}Modify a class attribute for an specific instance}{9}{section.11}%
+\contentsline {section}{\numberline {12}Working with multiple instances:}{10}{section.12}%
+\contentsline {section}{\numberline {13}Magic Method: \_\_repr\_\_}{11}{section.13}%
+\contentsline {section}{\numberline {14}Class Method}{13}{section.14}%
+\contentsline {section}{\numberline {15}Creating instances using the class method:}{14}{section.15}%
+\contentsline {section}{\numberline {16}Static Method}{15}{section.16}%
