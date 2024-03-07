@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5865e740-b8b1-421d-90e8-d5768f745f50" name="Changes" comment="tutorial">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csv.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.aux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.log" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.log" afterDir="false" />
@@ -14,7 +12,8 @@
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.toc" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

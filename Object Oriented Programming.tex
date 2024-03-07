@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{listings}
+\usepackage{graphicx}
 \usepackage{color}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -42,6 +43,12 @@
 \begin{document}
 \title{Object Oriented Programing with Python}
 \date{05/03/2024}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/logo}
+
+\end{figure}
+
 \maketitle
 \tableofcontents
 \pagebreak
@@ -768,4 +775,297 @@ The static method never sends the object as the first argument.
 	Process finished with exit code 0
 	
 \end{lstlisting}
+
+\section{static Method vs class Method}
+\textbf{static method}: It is used to do something that has a relationship with the class, but not something that must be unique per instance.
+
+Static method are not passing the object reference as the first argument in the background. They use a \textbf{regular} parameter, which is not mandatory.
+
+\begin{lstlisting}
+	class Item:
+		@staticmethod:
+		def is_integer():
+\end{lstlisting}
+
+\textbf{class method}: It is used to do something that has a relationship with the class, but usually, those that are used to manipulate different structures of data to instantiate objects, like we have done with CSV.
+
+Class method are passing the object reference as the first argument in the background. They use a \textbf{mandatory} parameter, which is not mandatory.
+
+\begin{lstlisting}
+	class Item:
+		@classmethod:
+		def instantiate_from_something(cls):
+\end{lstlisting}
+
+\section{Inheritance}
+
+It is used to give extra functionalities to the instances, which are special.
+These instances have something, which make them special. For example a company, which sells phones. These company have 2 broken phones. They havo to give them the category of broken, but this category is required only for 2 phones.
+
+In order to solve this problem I have to create a new category, with all the aspects of the old one. Then I have to add these special features to the new category. 
+
+For this example, I'm using the inheritance. I created a new class called Phone, which departs from the first class named Item. I'm not adding any special feature to the class Phone yet. But we can observe, that there is not error using the class Phone instead of Item.
+
+\begin{lstlisting}
+	import csv
+	
+	class Item:
+		#Class Level
+		pay_rate = 0.8
+		all = []
+		def __init__(self, name: str, price: float, quantity = 0):
+			#Run validations to the received arguments
+			assert price >= 0, f"Price is lower than 0"
+			assert quantity >= 0, f"Quantity is lower than 0"
+			
+			#Assign to self object
+			self.name = name
+			self.price = price
+			self.quantity = quantity
+			
+			#Actions to execute
+			Item.all.append(self)
+			
+		def calculate_revenues(self):
+			return self.price * self.quantity
+			
+		def apply_discount(self):
+			self.price = self.price * self.pay_rate
+			
+			@classmethod
+		def instantiate_from_csv(cls):
+			with open('csv.csv', 'r') as f:
+			reader = csv.DictReader(f)
+			items = list(reader)
+			
+			for item in items:
+			Item(
+			name = item.get('name'),
+			price = float(item.get('price')),
+			quantity = int(item.get('quantity'))
+			)
+		@staticmethod
+		def is_integer(num):
+			#We will count out the floats that are point zero.
+			#For i.e.: 5.0, 10.0
+			if isinstance(num, float):
+			#Count out the floats that are point zero
+			return num.is_integer()
+			elif isinstance(num, int):
+			return True
+			else:
+			return False
+		
+		def __repr__(self):
+			return f"Item({self.name}, {self.price}, {self.quantity})"
+	
+	class Phone(Item):
+		pass
+	
+	
+	phone1 = Phone("jscPhonev10", 500, 5)
+	phone2 = Phone("jscPhonev20", 700, 5)
+	
+Output: 
+/usr/bin/python3.10 /home/lucas/workspace/OOP/test.py 
+
+Process finished with exit code 0
+
+
+\end{lstlisting}
+
+\section{Parent Classes}
+These related classes are composed by parent classes and a child classes. 
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/images}
+	\caption{}
+	\label{fig:images}
+\end{figure}
+
+\section{Super}
+Super allows us to have full access to all the attributes of the parent class. By using the \textbf{super} function we don't need to copy the old class. It is enough, if we add the new attributes.
+
+\begin{lstlisting}
+	import csv
+	
+	class Item:
+		#Class Level
+		pay_rate = 0.8
+		all = []
+		def __init__(self, name: str, price: float, quantity = 0):
+			#Run validations to the received arguments
+			assert price >= 0, f"Price is lower than 0"
+			assert quantity >= 0, f"Quantity is lower than 0"
+			
+			#Assign to self object
+			self.name = name
+			self.price = price
+			self.quantity = quantity
+			
+			#Actions to execute
+			Item.all.append(self)
+			
+		def calculate_revenues(self):
+			return self.price * self.quantity
+		
+		def apply_discount(self):
+			self.price = self.price * self.pay_rate
+			
+		@classmethod
+		def instantiate_from_csv(cls):
+			with open('csv.csv', 'r') as f:
+			reader = csv.DictReader(f)
+			items = list(reader)
+			
+			for item in items:
+			Item(
+			name = item.get('name'),
+			price = float(item.get('price')),
+			quantity = int(item.get('quantity'))
+			)
+		@staticmethod
+		def is_integer(num):
+			#We will count out the floats that are point zero.
+			#For i.e.: 5.0, 10.0
+			if isinstance(num, float):
+			#Count out the floats that are point zero
+				return num.is_integer()
+			elif isinstance(num, int):
+				return True
+			else:
+				return False
+			
+		def __repr__(self):
+			return f"Item({self.name}, {self.price}, {self.quantity})"
+	
+	class Phone(Item):
+		all = []
+		def __init__(self, name, price, quantity, broken_phones = 0):
+			#Call to super function to have acces to all attributes and methods
+			super().__init__(
+			name, price, quantity
+			)
+			#Run validations to received arguments
+			assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater or equal than 0"
+			
+			#Actions to execute
+			Phone.all.append(self)
+			
+	
+	phone1 = Phone("jscPhonev10", 500, 5)
+	print(phone1.calculate_revenues())
+	phone2 = Phone("jscPhonev20", 700, 5)
+	
+Output:
+/usr/bin/python3.10 /home/lucas/workspace/OOP/test.py 
+[Item(jscPhonev10, 500, 5), Item(jscPhonev20, 700, 5)] 
+[Item(jscPhonev10, 500, 5), Item(jscPhonev20, 700, 5)]
+#It is not good to observe that, the broken phones still come from the class item.
+
+
+Process finished with exit code 0
+	
+\end{lstlisting} 
+
+\section{Separating the objects from each class}
+To avoid the last error of receiving allways that the object comes from the parent class, we modified the string Item with the magic methods: \_\_class\_\_.\_\_name\_\_
+
+\begin{lstlisting}
+	def __repr__(self):
+	return f"{self.__class__.__name__}({self.name}, {self.price}, {self.quantity})"
+	#return f"Item(self.name}, {self.price}, {self.quantity})" we replaced this command to avoid getting allways the name of the class Item.
+\end{lstlisting}
+
+The whole code is as following:
+
+\begin{lstlisting}
+import csv
+
+
+class Item:
+	# Class Level
+	pay_rate = 0.8
+	all = []
+	
+def __init__(self, name: str, price: float, quantity=0):
+	# Run validations to the received arguments
+	assert price >= 0, f"Price is lower than 0"
+	assert quantity >= 0, f"Quantity is lower than 0"
+	
+	# Assign to self object
+	self.name = name
+	self.price = price
+	self.quantity = quantity
+	
+	# Actions to execute
+	Item.all.append(self)
+	
+def calculate_revenues(self):
+	return self.price * self.quantity
+
+def apply_discount(self):
+	self.price = self.price * self.pay_rate
+
+@classmethod
+def instantiate_from_csv(cls):
+	with open('csv.csv', 'r') as f:
+	reader = csv.DictReader(f)
+	items = list(reader)
+	
+	for item in items:
+	Item(
+	name=item.get('name'),
+	price=float(item.get('price')),
+	quantity=int(item.get('quantity'))
+	)
+	
+@staticmethod
+def is_integer(num):
+	# We will count out the floats that are point zero.
+	# For i.e.: 5.0, 10.0
+	if isinstance(num, float):
+	# Count out the floats that are point zero
+	return num.is_integer()
+	elif isinstance(num, int):
+	return True
+	else:
+	return False
+	
+def __repr__(self):
+	return f"{self.__class__.__name__}({self.name}, {self.price}, {self.quantity})"
+	#return f"Item(self.name}, {self.price}, {self.quantity})" we replaced this command to avoid getting allways the name of the class Item.
+
+class Phone(Item):
+	all = []
+	
+	def __init__(self, name, price, quantity, broken_phones=0):
+		# Call to super function to have acces to all attributes and methods
+		super().__init__(
+		name, price, quantity
+		)
+		# Run validations to received arguments
+		assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater or equal than 0"
+		
+		#Actions to execute
+		Phone.all.append(self)
+
+
+phone1 = Phone("jscPhonev10", 500, 5)
+phone2 = Phone("jscPhonev20", 700, 5)
+print(Item.all)
+print(Phone.all)
+
+Output:
+/usr/bin/python3.10 /home/lucas/workspace/OOP/test.py 
+[Phone(jscPhonev10, 500, 5), Phone(jscPhonev20, 700, 5)] 
+[Phone(jscPhonev10, 500, 5), Phone(jscPhonev20, 700, 5)] 
+#Now we can observe the change.
+Process finished with exit code 0
+
+\end{lstlisting}
+\section{Use of the super function}
+
 \end{document}
