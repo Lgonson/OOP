@@ -1,4 +1,5 @@
 import csv
+
 class Item:
     # Class Level
     pay_rate = 0.8
@@ -10,24 +11,21 @@ class Item:
         assert quantity >= 0, f"Quantity is lower than 0"
 
         # Assign to self object
-        self.name = name
-        self.price = price
+        self.__name = name
+        self.__price = price
         self.quantity = quantity
 
         # Actions to execute
         Item.all.append(self)
 
     def calculate_revenues(self):
-        return self.price * self.quantity
-
-    def apply_discount(self):
-        self.price = self.price * self.pay_rate
+        return self.__price * self.quantity
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('csv.csv', 'r') as f:
+        with open('instances.csv', 'r') as f:
             reader = csv.DictReader(f)
-        items = list(reader)
+            items = list(reader)
 
         for item in items:
             Item(
@@ -49,5 +47,31 @@ class Item:
             return False
 
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.name}, {self.price}, {self.quantity})"
-        #return f"Item(self.name}, {self.price}, {self.quantity})" we replaced this command to avoid getting allways the name of the class Item.
+        return f"{self.__class__.__name__}({self.name}, {self.__price}, {self.quantity})"
+
+    @property
+    #Property decorator = Read-only attribute
+    def price(self):
+        return self.__price
+
+    def apply_discount(self):
+        self.__price = self.__price * self.pay_rate
+
+    def apply_increment(self, increment_value):
+        self.__price = self.__price + self.__price * increment_value
+
+    @property
+    # Property decorator = Read-only attributes
+    def name(self):
+        return self.__name
+
+
+    @name.setter
+    #Decorator to modify variables
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception(f"Name: {value} is too long.")
+        else:
+            self.__name = value
+            print(f'New name {value} accepted')
+

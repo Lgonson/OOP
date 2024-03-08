@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5865e740-b8b1-421d-90e8-d5768f745f50" name="Changes" comment="tutorial">
+      <change afterPath="$PROJECT_DIR$/keyboard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.aux" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.log" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.out" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP.py" beforeDir="false" afterPath="$PROJECT_DIR$/delete_OOP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object Oriented Programming.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.toc" beforeDir="false" afterPath="$PROJECT_DIR$/Object Oriented Programming.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object Oriented Programming.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv.csv" beforeDir="false" afterPath="$PROJECT_DIR$/instances.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/item.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +43,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2dCnUMpBIr1ktJzA8TotJkubgAJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,6 +53,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.OOP.executor": "Run",
+    "Python.Polymorphism.executor": "Run",
+    "Python.item.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -52,7 +62,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/lucas/workspace/OOP",
-    "settings.editor.selected.configurable": "configurable.group.build"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="SharedIndexes">
