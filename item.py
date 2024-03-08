@@ -1,6 +1,4 @@
 import csv
-
-
 class Item:
     # Class Level
     pay_rate = 0.8
@@ -53,27 +51,3 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}({self.name}, {self.price}, {self.quantity})"
         #return f"Item(self.name}, {self.price}, {self.quantity})" we replaced this command to avoid getting allways the name of the class Item.
-
-class Phone(Item):
-    all = []
-
-    def __init__(self, name, price, quantity, broken_phones=0):
-        # Call to super function to have acces to all attributes and methods
-        super().__init__(
-            name, price, quantity
-        )
-        # Run validations to received arguments
-        assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater or equal than 0"
-
-        #Actions to execute
-        Phone.all.append(self)
-
-
-phone1 = Phone("jscPhonev10", 500, 5)
-phone2 = Phone("jscPhonev20", 700, 5)
-print(Item.all)
-print(Phone.all)
-
-
-
-
